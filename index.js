@@ -44,6 +44,12 @@ console.log(`The odd numbers you gave are ${getOdds(numbers)}.`);
  * @returns {number} the length of the array
  */
 function getLength(numbers) {
+	let length = 0;
+	for (let i = 0; i < numbers.length; i++) {
+		length += 1;
+	}
+	return length;
+	// my solution >>
 	return numbers.length;
 }
 
@@ -52,6 +58,12 @@ function getLength(numbers) {
  * @returns {number} the sum of the numbers
  */
 function getSum(numbers) {
+	let sum = 0;
+	for (let i = 0; i < numbers.length; i++) {
+		sum += numbers[i];
+	}
+	return sum;
+	// my solution >>
 	return numbers.reduce((n, v) => n + v);
 }
 
@@ -68,6 +80,14 @@ function getMean(numbers) {
  * @returns {number} the smallest of the numbers
  */
 function getMin(numbers) {
+	let min = undefined;
+	for (let i = 0; i < numbers.length; i++) {
+		if (min === undefined || numbers[i] < min) {
+			min = numbers[i];
+		}
+	}
+	return min;
+	// my solution >>
 	return numbers.reduce((c, v) => Math.min(c, v));
 }
 
@@ -76,6 +96,14 @@ function getMin(numbers) {
  * @returns {number} the largest of the numbers
  */
 function getMax(numbers) {
+	let max = undefined;
+	for (let i = 0; i < numbers.length; i++) {
+		if (max == undefined || max < numbers[i]) {
+			max = numbers[i];
+		}
+	}
+	return max;
+	//my solution (so nice :)
 	return numbers.reduce((c, v) => Math.max(c, v));
 }
 
@@ -93,6 +121,13 @@ function getRange(numbers) {
  */
 function getEvens(numbers) {
 	let result = [];
+	for (let i = 0; i < numbers.length; i++) {
+		if (0 == numbers[i] % 2) {
+			result.push(numbers[i]);
+		}
+	} // while i personally prefer while(i) loops
+	return result;
+	// my solution
 	numbers.forEach((n) => {
 		if (n % 2 == 0) {
 			result.push(n);
@@ -107,6 +142,13 @@ function getEvens(numbers) {
  */
 function getOdds(numbers) {
 	let result = [];
+	for (let i = 0; i < numbers.length; i++) {
+		if (0 < numbers[i] % 2) {
+			result.push(numbers[i]);
+		}
+	} // while i personally prefer while(i) loops
+	return result;
+	// my solution
 	numbers.forEach((n) => {
 		if (0 < n % 2) {
 			result.push(n);
